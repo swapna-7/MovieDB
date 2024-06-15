@@ -23,11 +23,11 @@ function App() {
     
   ]
   const languages = [
-    { id: 'english', name: 'English' },
-    { id: 'hindi', name: 'Hindi' },
-    { id: 'tamil', name: 'Tamil' },
-    { id: 'telugu', name: 'Telugu' },
-    { id: 'malayalam', name: 'Malyalam' },
+    { id: 'en', name: 'English' },
+    { id: 'hi', name: 'Hindi' },
+    { id: 'ta', name: 'Tamil' },
+    { id: 'te', name: 'Telugu' },
+    { id: 'ml', name: 'Malyalam' },
   ]
 
   
@@ -53,7 +53,7 @@ function App() {
         ))}
 
         {languages.map((language) => (
-          <Route key={language.id} path={`/category/${language.id}`} element={<Language categoryId={language.id} />} />
+          <Route key={language.id} path={`/category/${language.id}`} element={<Language languageId={language.id} />} />
         ))}
                 
         </Routes>

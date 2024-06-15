@@ -41,10 +41,10 @@ export default function Horror() {
 
   return (
     <div>
-        <div className='bg-red-950 '>
-        <h1 className="text-4xl font-bold text-creepster text-center text-yellow-500 py-1">Horror</h1>   
+        <div className=' '>
+        <h1 className="text-4xl font-bold text-creepster text-center py-1">Horror</h1>   
              </div>
-    <div className='bg-red-950'>
+    <div className=''>
     <div
     className="grid grid-cols-4 gap-1 p-2 ml-20"
     style={{

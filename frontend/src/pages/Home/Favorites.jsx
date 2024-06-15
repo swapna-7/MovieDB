@@ -86,7 +86,7 @@ const Favorites = () => {
   }
 
   return (
-    <div className='bg-gray-900 '>
+    <div className=' '>
     <div className='mt-3 mx-11 '>
     <div className='relative w-full max-w-[1210px] h-auto grid grid-cols-5 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 auto-rows-min'> {/* Adjusted for grid layout */}
         {Object.values(movieDetails).map((movieDetail, index) => (

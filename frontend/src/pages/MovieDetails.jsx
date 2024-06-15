@@ -96,7 +96,7 @@ export default function MovieDetails() {
   }
   return (
     <>
-    <div className='bg-gray-800 text-white'>
+    <div className=' text-white'>
     <div className='flex flex-col md:flex-row overflow-hidden bg-cover w-full h-auto md:h-74' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})` }}>
       <div className='basis-2/5 p-3 md:basis-1/3 mr-2 md:ml-auto md:mr-0 self-center md:self-auto'>
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title || movie.name} className='mt-8 h-96 object-cover m-5' />
@@ -140,9 +140,9 @@ export default function MovieDetails() {
         </div>
       </div>
     </div>
-    <h2 className='flex text-red-400 font-semibold text-4xl m-4 justify-center'>Cast & Crew</h2>
+    <h2 className='flex text-red-400 font-semibold text-4xl m-4 justify-center '>Cast & Crew</h2>
     <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-5 '>
-  {credits?.cast?.map((member) => (
+  {credits?.cast?.slice(0, 9).map((member) => (
     <div key={`${member.id}-${member.name}`} className='flex items-center m-4'>
       <img src={`https://image.tmdb.org/t/p/w500${member.profile_path}`} alt={member.name} className='w-16 h-16 rounded-full mr-4' />
       <div>

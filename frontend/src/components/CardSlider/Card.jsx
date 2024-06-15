@@ -10,6 +10,7 @@ function Card(movie) {
       <div className='movie-details  ' >
         <div className='box'>
         <h4 className='title'>{movie.info.title}</h4>
+
         </div>
       </div>
     </div>
