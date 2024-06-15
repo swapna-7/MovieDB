@@ -66,7 +66,7 @@ export default function Trending() {
   
 
   return (
-    <div>
+    <div className='text-2xl ml-3'>
       <h2>Trending</h2>
       <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar">
         {trendingData.length > 0? trendingData.map((item, index) => (

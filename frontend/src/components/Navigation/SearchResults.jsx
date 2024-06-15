@@ -29,11 +29,13 @@ function SearchResults() {
   },[query])
 
   return (
-      <Link className="flex flex-row flex-wrap" to={`/moviedetails/${movies.id}`}>
+    <div className='flex flex-row flex-wrap'>
     {movies.filter(movie => movie.poster_path).map((movie) => (
+      <Link to={`/moviedetails/${movie.id}`} key={movie.id}>
       <CardList data={movie}/>    
-      ))}
     </Link>
+      ))}
+      </div>
   )
 }
 
