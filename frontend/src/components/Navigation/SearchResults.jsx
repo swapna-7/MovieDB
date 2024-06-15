@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardList from '../CardSlider/CardList.jsx'
+import { Link } from 'react-router-dom';
 
 function SearchResults() {
     const { query } = useParams();
@@ -28,10 +29,11 @@ function SearchResults() {
   },[query])
 
   return (
-      <div className="flex flex-row flex-wrap" >
-    {movies.filter(movie => movie.poster_path).map(movie => (
-      <CardList data={movie}/>    ))}
-    </div>
+      <Link className="flex flex-row flex-wrap" to={`/moviedetails/${movies.id}`}>
+    {movies.filter(movie => movie.poster_path).map((movie) => (
+      <CardList data={movie}/>    
+      ))}
+    </Link>
   )
 }
 

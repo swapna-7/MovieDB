@@ -4,6 +4,8 @@ import { getTrendingMedias,getTopratedMedias,
          getBollywoodMovies,getTollywoodMovies,
          getIndiasTrendingMovies } from '../../index.js'
 import { Link } from 'react-router-dom';
+import Card from '../components/CardSlider/Card.jsx'
+
 
 
 export default function Trending() {
@@ -66,23 +68,22 @@ export default function Trending() {
   return (
     <div>
       <h2>Trending</h2>
-      <div className="flex overflow-x-auto space-x-4 p-4">
+      <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar">
         {trendingData.length > 0? trendingData.map((item, index) => (
           <Link key={index} className="flex flex-col items-center"  to={`/moviedetails/${item.id}`}>
-            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title || item.name} className="w-full h-64 object-cover" />
-            <h3 className="text-lg font-semibold">{item.title || item.name}</h3>
+            <Card info={item} key={index}/>
           </Link >
+          
         )) : null}
       </div>
 
       {allData.map((section, index) => (
         <React.Fragment key={index}>
           <h2>{section.title}</h2>
-          <div className="flex overflow-x-auto space-x-4 p-4" >
+          <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar" >
             {section.data.length > 0? section.data.map((item, idx) => (
               <Link key={idx} to={`/moviedetails/${item.id}`} className="flex flex-col items-center">
-                <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title || item.name} className="w-full h-64 object-cover" />
-                <h3 className="text-lg font-semibold">{item.title || item.name}</h3>
+                <Card info={item} key={idx}/>
               </Link>
             )) : null}
           </div>

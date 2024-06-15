@@ -16,7 +16,7 @@ const Banner = () => {
     const [scrolled, setScrolled] = useState(false);
 
     window.onscroll = () => {
-        setScrolled(window.pageYOffset === 0? false : true);
+        setScrolled(window.scrollY === 0? false : true);
         return () => (window.onscroll = null);
     };
 
@@ -32,7 +32,7 @@ const Banner = () => {
                 >
                     {
                         popularMovies.map(movie => (
-                            <Link key={movie.id} href={`/movie/${movie.id}`} className="no-underline text-white">
+                            <Link key={movie.id} href={`/movie/${movie.id}`} className="no-underline text-white" to={`/moviedetails/${movie.id}`}>
                                 <div className="relative h-[600px]">
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="ml-auto display:block w-full " />
                                 </div>
