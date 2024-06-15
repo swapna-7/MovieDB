@@ -24,11 +24,11 @@ const categories = [
   { id: 878, name: 'Sci-Fi' },]
 
   const languages = [
-    { id: 'english', name: 'English' },
-    { id: 'hindi', name: 'Hindi' },
-    { id: 'tamil', name: 'Tamil' },
-    { id: 'telugu', name: 'Telugu' },
-    { id: 'malayalam', name: 'Malyalam' },
+    { id: 'en', name: 'English' },
+    { id: 'hi', name: 'Hindi' },
+    { id: 'ta', name: 'Tamil' },
+    { id: 'te', name: 'Telugu' },
+    { id: 'ml', name: 'Malyalam' },
   ]
   
 

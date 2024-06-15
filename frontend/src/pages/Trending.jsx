@@ -70,7 +70,7 @@ export default function Trending() {
       <h2>Trending</h2>
       <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar">
         {trendingData.length > 0? trendingData.map((item, index) => (
-          <Link key={index} className="flex flex-col items-center"  to={`/moviedetails/${item.id}`}>
+          <Link key={index} className="flex flex-col items-center" to={`/moviedetails/${item.id}`}>
             <Card info={item} key={index}/>
           </Link >
           
