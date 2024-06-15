@@ -71,4 +71,39 @@ try{
   console.log(error);
   return res.status(500).json({ message: "Internal Server Error " });
 }
+};
+
+export const removeFromFavorites = async (req, res) => {
+  try {
+
+    const {movieId, clerkId} = await req.body;
+     
+    const userExists = await User.find({ clerkId: clerkId });
+    if (!userExists) {
+      return res.status(401).json({ message: "You're not Authenticated" });
+    }
+
+    const userId = userExists[0]._id;
+
+
+   console.log("removeFromFavorites",movieId,userId)
+  
+   
+    const favorite = await Favorite.findOneAndDelete({ movieId, userId  });
+    console.log(favorite)
+
+    if (!favorite) {
+
+      console.log('Favorite not found for movieId=${movieId} and clerkId=${userId}');
+      res.json({ message: 'Favorite not found' });
+    
+    } else {
+      console.log('Favorite deleted successfully for movieId=${movieId} and clerkId=${userId}');
+      res.json({ message: 'Favorite removed successfully' });
+    }
+  
+} catch (error) {
+  console.error('Error removing from favorites:', error);
+  res.status(500).json({ message: 'Internal Server Error' });
 }
+};

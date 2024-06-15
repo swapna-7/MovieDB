@@ -55,7 +55,7 @@ function App() {
         {languages.map((language) => (
           <Route key={language.id} path={`/category/${language.id}`} element={<Language categoryId={language.id} />} />
         ))}
-
+                
         </Routes>
       </Router>
     </>

@@ -7,6 +7,7 @@ import { Heart } from 'lucide-react'; // Assuming PlusSquare is not needed
 import { languageCodes, genreCodes } from './id';
 import { useUser } from "@clerk/clerk-react";
 import axios from 'axios';
+import Reviews from '../pages/Home/Reviews.jsx'
 
 const getLanguageName = (code) => languageCodes[code] || code;
 const getGenreName = (id) => genreCodes[id] || 'Unknown';
@@ -140,7 +141,7 @@ export default function MovieDetails() {
       </div>
     </div>
     <h2 className='flex text-red-400 font-semibold text-4xl m-4 justify-center'>Cast & Crew</h2>
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 '>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-5 '>
   {credits?.cast?.map((member) => (
     <div key={`${member.id}-${member.name}`} className='flex items-center m-4'>
       <img src={`https://image.tmdb.org/t/p/w500${member.profile_path}`} alt={member.name} className='w-16 h-16 rounded-full mr-4' />
@@ -150,16 +151,9 @@ export default function MovieDetails() {
       </div>
     </div>
   ))}
-  {credits?.crew?.map((member) => (
-    <div key={`${member.id}-${member.name}`} className='flex items-center mb-4'>
-      <img src={`https://image.tmdb.org/t/p/w500${member.profile_path}`} alt={member.name} className='w-16 h-16 rounded-full mr-4' />
-      <div>
-        <h3 className='text-yellow-50'>{member.name}</h3>
-        <p className='text-yellow-50'>{member.job}</p>
-      </div>
-    </div>
-  ))}
+  
 </div>
+<Reviews movieId={id}/>
   </div>
   </>
   );

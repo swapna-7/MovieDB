@@ -8,6 +8,7 @@ import { createUser } from "./webhook/clerk.js";
 import { connectToDB } from "./MongoDB/index.js";
 import FavoritesRoutes from "./routes/Favorites.routes.js";
 import RemoveFav from "./routes/RemoveFav.routes.js";
+import { ReviewRoutes } from "./routes/Review.routes.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.post("/api/webhook/clerk",bodyParser.raw({type:"application/json"}), createU
 
 app.use("/add-to-favorites",FavoritesRoutes)
 app.use("/remove-from-favorites",RemoveFav)
+app.use("/reviews",ReviewRoutes)
 
 
 

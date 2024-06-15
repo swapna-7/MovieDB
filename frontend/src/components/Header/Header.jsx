@@ -21,7 +21,7 @@ function Header() {
         <Link to="/movies/upcoming">
           <span className="text-2xl cursor-pointer text-white hover:text-teal-300">Upcoming</span>
         </Link>
-        <Link to="/movies/mylist">
+        <Link to="/Favorites">
           <span className="text-2xl cursor-pointer text-white hover:text-teal-300">Watchlist</span>
         </Link>
       

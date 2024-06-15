@@ -1,5 +1,5 @@
 import express from "express";
-import  {removeFromFavorites}  from "../handlers/Favorites.handlers";
+import  {removeFromFavorites}  from "../handlers/Favorites.handlers.js";
 
 
 const RemoveFav = express.Router();
