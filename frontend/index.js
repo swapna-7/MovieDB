@@ -121,11 +121,11 @@ export const getTVorMovieDetailsByID = async (type, id) => {
   }
 };
 
-
-export const getAllfavorites = async (uid, accountID) => {
+export const getKollywoodMovies = async () => {
   try {
+    // Replace 'type' with 'movie' to fetch movies instead of TV shows
     const res = await fetch(
-        `/api/favorites/get-all-favorites?id=${uid}&accountID=${accountID}`,
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=ta&year=2024`,
       {
         method: "GET",
       }
@@ -133,8 +133,70 @@ export const getAllfavorites = async (uid, accountID) => {
 
     const data = await res.json();
 
-    return data && data.data;
+    return data && data.results;
   } catch (e) {
     console.log(e);
+  }
+};
+export const getTollywoodMovies = async () => {
+  try {
+    const res = await fetch(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=te&year=2024`, 
+      {
+        method: "GET",
+      }
+    );
+
+    const data = await res.json();
+
+    return data && data.results;
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const getBollywoodMovies = async () => {
+  try {
+    const res = await fetch(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=hi&year=2024`, 
+      {
+        method: "GET",
+      }
+    );
+
+    const data = await res.json();
+
+    return data && data.results;
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const getIndiasTrendingMovies = async () => {
+  try {
+    const res = await fetch(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=-popularity.desc&primary_release_date.gte=2023-01-01&primary_release_date.lte=2024-12-31`,
+      {
+        method: "GET",
+      }
+    );
+
+    const data = await res.json();
+
+    return data && data.results;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getCreditsMovies =async (type,id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}&language=en-US`);
+    if (!res.ok) {
+      throw new Error(`HTTP error status: ${res.status}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch credits:', error);
+    return null; // Or handle the error as appropriate for your application
   }
 };

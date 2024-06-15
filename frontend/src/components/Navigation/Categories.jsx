@@ -21,10 +21,10 @@ import {
 
 function Categories() {
   return (
-    <div className='m-0 '>
+    <div className='m-1 relative left-5 '>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className='h-9 w-74 text-black text-lg'>All Categories<ChevronDown size={20} className='relative mt-1'/>
+        <Button variant="outline" className='h-10 w-74 text-black text-lg'>All Categories<ChevronDown size={20} className='relative mt-1'/>
 </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-80 bg-black">

@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage.jsx';
 import Header from './components/Header/Header.jsx';
 import MovieDetails from './pages/MovieDetails';
+import SearchResults from './components/Navigation/SearchResults.jsx';
+import Horror from './pages/Horror.jsx'
+
 function App() {
   return (
        <>
@@ -17,6 +20,8 @@ function App() {
           <Route path="movie/:id" element={<h1>Movie detail page</h1>}/>
           <Route path="movies/:type" element={<h1>Movie list page</h1>}/>
           <Route path="/moviedetails/:id" element={<MovieDetails />} /> // Add a route for MovieDetails
+          <Route path="/movies/searchresults/:query" element={<SearchResults />} /> // Add a route for MovieDetails
+          <Route path="/movies/horror" element={<Horror />} />
 
           {/* Add other routes as needed */}
         </Routes>
