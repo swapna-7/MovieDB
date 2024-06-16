@@ -7,9 +7,10 @@ import Header from './pages/Home/Header.jsx';
 import MovieDetails from './pages/Home/MovieDetails';
 import SearchResults from './pages/SearchBar/SearchResults.jsx';
 import Favorites from './pages/UsersHandlings/Favorites.jsx';
-import Movies from './pages/Categories/Gener.jsx';
+import Movies from './pages/Categories/Genre.jsx';
 import Language from './pages/Categories/LanguagePage.jsx';
 import { useParams } from 'react-router-dom';
+import UploadWidget from './AddMovies/AddMovies';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/moviedetails/:id" element={<MovieDetails />} /> // Add a route for MovieDetails
           <Route path="/movies/searchresults/:query" element={<SearchResults />} /> // Add a route for MovieDetails
           <Route path="/Favorites" element={<Favorites/>} />
+          <Route path="/addmovies" element={<UploadWidget/>} />
           
           {categories.map((category) => (
           <Route key={category.id} path={`/category/${category.id}`} element={<Movies categoryId={category.id} />} />

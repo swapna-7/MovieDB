@@ -60,8 +60,8 @@ function Categories() {
         <div className='relative left-2 grid grid-cols-3 gap-2'>
        
         {languages.map((language) => (
-              <Link key={language.id} to={`/movies/${language.id}`}>
-                <span className="relative text-base cursor-pointer text-white font-medium hover:underline underline-offset-4">{language.name}</span>
+              <Link key={language.id} to={`/movies/${language.id}`} className="relative text-base cursor-pointer text-white font-medium hover:underline underline-offset-4"
+              >{language.name}
               </Link>
             ))}
        

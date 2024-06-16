@@ -7,19 +7,14 @@ import Categories from './Categories.jsx'
 import { SquarePlus } from 'lucide-react';
 
 
+
+
 function Header() {
   return (
 
-<<<<<<< HEAD
-    <div className="bg-black text-white pt-0 mx-2 mb-1 flex flex-row flex-wrap space-between space-x-8">
+    <div className="bg-black text-white pt-0 mx-2 mb-1 ">
 
-
-=======
-    <div className="bg-black text-white pt-0 mx-2 mb-1 flex flex-row flex-wrap space-between">
-
-
-      <div className="flex space-x-8 ">
->>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
+      <div className="flex flex-row flex-wrap space-x-8 ">
         <h1 className='text-xl bg-emerald-400 p-1 m-1 mt-4 rounded-md h-8 font-mono'>MovieDB</h1>
         
         <Link to="/">
@@ -36,18 +31,16 @@ function Header() {
         <Categories/>
           <SearchBar />
 
+<Link to="/addmovies">
 <Button variant="ghost" className="mt-5 text-lg relative right-20 ">
 <SquarePlus/>Add Movies
 
 </Button>
+</Link>
           <Button variant= "ghost" className="relative left-[600px] top-0 text-white " style={{ top: -44 }}><SquarePlus/> Add Movie</Button>
            <LoginPage/>
 
-
-<<<<<<< HEAD
-=======
       </div>
->>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
 
     </div>
   )

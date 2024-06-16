@@ -34,11 +34,7 @@ const Banner = () => {
                         popularMovies.map(movie => (
                             <Link key={movie.id} href={`/movie/${movie.id}`} className="no-underline text-white" to={`/moviedetails/${movie.id}`}>
                                 <div className="relative h-[600px]">
-<<<<<<< HEAD
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="ml-auto w-full " />
-=======
-                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="ml-auto display:block w-full " />
->>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
                                 </div>
                                 <div className="absolute p-20 bottom-0 h-3/4 flex flex-col justify-end items-start w-full bg-gradient-to-b from-transparent to-black opacity-100 transition-opacity duration-300 ease-in-out hover:opacity-100">
                                     <div className="font-bold text-6xl mb-1 text-left">{movie?.original_title || ""}</div>

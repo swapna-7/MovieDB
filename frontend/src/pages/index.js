@@ -202,7 +202,7 @@ export const getCreditsMovies =async (type,id) => {
 };
 
 export const getMoviesByLanguage = async (languageId) => {
-  try {
+  try { 
     let url = '';
     switch (languageId) {
       case 'ta':
@@ -214,7 +214,7 @@ export const getMoviesByLanguage = async (languageId) => {
       case 'te':
         url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=te&year=2024`;
         break;
-      case 'l':
+      case 'ml':
         url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=ml&year=2024`;
         break;
       default:
