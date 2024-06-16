@@ -200,3 +200,35 @@ export const getCreditsMovies =async (type,id) => {
     return null; // Or handle the error as appropriate for your application
   }
 };
+
+export const getMoviesByLanguage = async (languageId) => {
+  try {
+    let url = '';
+    switch (languageId) {
+      case 'ta':
+        url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=ta&year=2024`;
+        break;
+      case 'hi':
+        url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=hi&year=2024`;
+        break;
+      case 'te':
+        url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=te&year=2024`;
+        break;
+      case 'l':
+        url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&sort_by=popularity.desc&with_original_language=ml&year=2024`;
+        break;
+      default:
+        break;
+    }
+
+    const res = await fetch(url, {
+      method: 'GET',
+    });
+
+    const data = await res.json();
+
+    return data && data.results;
+  } catch (e) {
+    console.log(e);
+  }
+};

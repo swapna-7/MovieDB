@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { getTVorMoviesByGenre, getTVorMovieDetailsByID } from '../../../index.js'
-import { languageCodes } from '../id.js';
+import { getTVorMoviesByGenre, getTVorMovieDetailsByID } from '../index.js'
+import { languageCodes } from '../Home/id.js';
 
 import { Button } from '@/components/shad/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Card from '../../components/CardSlider/Card.jsx'
+import Card from '../CardSlider/Card.jsx'
 
 
 const getLanguageName = (code) => languageCodes[code] || code;

@@ -3,7 +3,7 @@ import { Input} from '@/components/shad/ui/input';
 import { Button } from '@/components/shad/ui/button';
 import { Search} from 'lucide-react';
 import CardList from '../CardSlider/CardList.jsx'
-import '../Navigation/Search.css'
+import './Search.css'
 import { useNavigate } from 'react-router-dom';
 import { IoSearch } from "react-icons/io5";
 

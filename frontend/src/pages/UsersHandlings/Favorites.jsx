@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { getTVorMovieDetailsByID , getTVorMovieVideosByID} from '../../../index.js';
+import { getTVorMovieDetailsByID , getTVorMovieVideosByID} from '../index.js';
 import { useUser } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-import Header from '../../components/Header/Header.jsx';
+import Header from '../Home/Header.jsx';
 import { Button } from '@/components/shad/ui/button';
-import { languageCodes } from '../id.js';
+import { languageCodes } from '../Home/id.js';
 import { Play } from 'lucide-react';
 import {  useNavigate } from 'react-router-dom';
 

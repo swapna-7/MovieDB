@@ -36,17 +36,20 @@
   }
   
   input{
+    margin-top: 11px;
     font-size: 1rem;
     padding: 0.5rem 2rem;
     line-height: 1.7rem;
     border-radius: 20px;
     border: 1px solid #ddd;
     margin-bottom: 1rem;
-    width: 30rem;
+    width: 20rem;
 
   }
   
   .button{
+    margin-top: 13px;
+
     position: relative;
     background-color: rgb(20 184 166);
     color: #fff;

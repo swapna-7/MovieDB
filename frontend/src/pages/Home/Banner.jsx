@@ -37,8 +37,8 @@ const Banner = () => {
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} className="ml-auto display:block w-full " />
                                 </div>
                                 <div className="absolute p-20 bottom-0 h-3/4 flex flex-col justify-end items-start w-full bg-gradient-to-b from-transparent to-black opacity-100 transition-opacity duration-300 ease-in-out hover:opacity-100">
-                                    <div className="font-bold text-9xl mb-1 text-left">{movie?.original_title || ""}</div>
-                                    <div className="text-4xl mb-4">
+                                    <div className="font-bold text-6xl mb-1 text-left">{movie?.original_title || ""}</div>
+                                    <div className="text-2xl mb-4">
                                         {movie?.release_date || ""}
                                         <span className="ml-12">
                                             {movie?.vote_average || ""}

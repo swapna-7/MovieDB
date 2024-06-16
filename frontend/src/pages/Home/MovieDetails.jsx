@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams,useLocation } from 'react-router-dom';
-import { getTVorMovieDetailsByID , getCreditsMovies} from '../../index.js';
+import { getTVorMovieDetailsByID , getCreditsMovies} from '../index.js';
 import { Progress } from '@/components/shad/ui/progress';
 import { Button } from '@/components/shad/ui/button';
 import { Heart } from 'lucide-react'; // Assuming PlusSquare is not needed
-import { languageCodes, genreCodes } from './id';
+import { languageCodes, genreCodes } from './id.js';
 import { useUser } from "@clerk/clerk-react";
 import axios from 'axios';
-import Reviews from '../pages/Home/Reviews.jsx'
+import Reviews from '../UsersHandlings/Reviews.jsx'
 
 const getLanguageName = (code) => languageCodes[code] || code;
 const getGenreName = (id) => genreCodes[id] || 'Unknown';
