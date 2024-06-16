@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useUser } from "@clerk/clerk-react";
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/shad/ui/avatar"
+import userpic from '../../assets/user.png'
 export default function Review({ movieId }) {
   const [reviews, setReviews] = useState([]); // State for storing reviews
   const [newReview, setNewReview] = useState(''); // State for new review input
@@ -85,16 +86,30 @@ export default function Review({ movieId }) {
         </form>
       </div>
 
+        <div className='grid gap-4 grid-cols-3 grid-rows-3 m-1'>
       <ul>
         {reviews.map((review) => (
-          <li key={review._id} className="m-2 p-2 border-4">
-            <p className="text-xl">{review.userId && review.userId.firstName ? review.userId.firstName+" "+review.userId.lastName  : 'Unknown User'}</p>
-            <p className="text-lg">{review.review}</p>
-            <p className="text-lg m-2">Rating: {review.rating}</p>
+          <li key={review._id} className="m-2 p-2 border-4 ">
+           <div className='flex flex-row space-x-4 bg-slate-500 m-1 p-1 rounded-lg'> <Avatar>
+  <AvatarImage src={review.userId.photo} />
+  <AvatarFallback><img src={userpic}/></AvatarFallback>
+</Avatar>
+
+            <p className="text-xl m-2">{review.userId && review.userId.firstName ? review.userId.firstName+" "+review.userId.lastName  : 'Unknown User'}</p>
+            </div>
+            <h1 className='font-semibold text-xl'>Comments:</h1>
+            <p className="text-lg "> {review.review}</p>
+            <h1>-------------------------------------------------------------------------------</h1>
+            <h1 className='font-semibold text-xl '>Rating:</h1>
+
+            <p className="text-lg "> {review.rating} <i className="ml-2 fas fa-star" /></p>
+            <h1>-------------------------------------------------------------------------------</h1>
+
             <p className="text-xs"> {new Date(review.createdAt).toLocaleString()}</p>
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

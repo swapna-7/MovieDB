@@ -21,9 +21,6 @@ function Header() {
           <h2 className="text-xl cursor-pointer mt-4  text-white hover:text-teal-300 ">Home</h2>
         </Link>
       
-        <Link to="/movies/upcoming">
-          <h2 className="text-xl cursor-pointer mt-4 text-white hover:text-teal-300">Upcoming</h2>
-        </Link>
         <Link to="/Favorites">
           <h2 className="text-xl cursor-pointer mt-4  text-white hover:text-teal-300">Watchlist</h2>
         </Link>
