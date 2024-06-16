@@ -1,0 +1,102 @@
+
+  
+  body {
+    margin: 0;
+    padding: 0;
+    color:  rgb(20 184 166);
+  }
+  
+  p {
+    font-size: 1.6rem
+  }
+  
+  small {
+    font-size: 1.2rem;
+  }
+  
+  .container{
+    margin: 0 auto;
+    max-width: 1000px ;
+  }
+  
+  .title{
+    font-size: 6.4rem;
+    text-align:center;
+    font-family: 'Limelight', cursive;
+  }
+  
+  .form{
+    display:grid;
+  }
+  
+  .label{
+    font-size: 1.4rem;
+    margin-bottom:0.2rem;
+    text-transform: uppercase;
+  }
+  
+  input{
+    margin-top: 11px;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    line-height: 1.7rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    width: 20rem;
+
+  }
+  
+  .button{
+    margin-top: 13px;
+
+    position: relative;
+    background-color: rgb(20 184 166);
+    color: #fff;
+    padding: 0.5rem ;
+    border: 1px solid rgb(20 184 166);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+    right: 3.8rem;
+  }
+  
+  .button:hover{
+    background-color: rgb(20 184 166);
+    border-color:  rgb(20 184 166);
+  }
+  
+  @media(min-width:786px){
+    .form {
+      grid-template-columns:auto 1fr auto;
+      grid-gap: 1rem;
+      align-items: center;
+    }
+    .input{
+      margin-bottom: 0;
+    }
+  }
+  
+  .card-list{
+    margin-top: 4rem;
+  }
+  
+  .card{
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #2C302E;
+    background-color: #cedad9;
+    color: #2C302E;
+    margin-bottom: 2rem;
+  }
+  
+  .card--title{
+    margin-bottom: 0.5rem;
+    font-size: 3.2rem;
+  }
+  
+  .card--image{
+    margin: 0 auto;
+    display:block;
+  }
