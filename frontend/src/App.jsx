@@ -8,7 +8,6 @@ import MovieDetails from './pages/Home/MovieDetails';
 import SearchResults from './pages/SearchBar/SearchResults.jsx';
 import Favorites from './pages/UsersHandlings/Favorites.jsx';
 import Movies from './pages/Categories/Genre.jsx';
-import Language from './pages/Categories/LanguagePage.jsx';
 import { useParams } from 'react-router-dom';
 import UploadWidget from './AddMovies/AddMovies';
 
@@ -47,7 +46,6 @@ function App() {
           <Route key={category.id} path={`/category/${category.id}`} element={<Movies categoryId={category.id} />} />
          ))}
 
-             <Route path="/movies/:languageId" element={<Language />} />
             
         </Routes>
       </Router>
