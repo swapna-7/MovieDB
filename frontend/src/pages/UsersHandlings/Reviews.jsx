@@ -88,7 +88,7 @@ export default function Review({ movieId }) {
       <ul>
         {reviews.map((review) => (
           <li key={review._id} className="m-2 p-2 border-4">
-            <p className="text-xl">{review.userId && review.userId.firstName ? review.userId.firstName + " " + review.userId.lastName : 'Unknown User'}</p>
+            <p className="text-xl">{review.userId && review.userId.firstName ? review.userId.firstName  : 'Unknown User'}</p>
             <p className="text-lg">{review.review}</p>
             <p className="text-lg m-2">Rating: {review.rating}</p>
             <p className="text-xs"> {new Date(review.createdAt).toLocaleString()}</p>

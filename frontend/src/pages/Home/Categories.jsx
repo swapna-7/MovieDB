@@ -40,7 +40,7 @@ function Categories() {
     <div className='m-0 '>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className='h-9 w-74 text-black text-lg '>All Categories<ChevronDown size={20} className='relative mt-1'/>
+        <Button variant="outline" className='h-8 mt-4 w-74 text-black text-lg '>All Categories<ChevronDown size={20} className='relative mt-1'/>
 </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-80 bg-black">

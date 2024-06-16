@@ -2,9 +2,9 @@ import React ,{useState,useEffect}from 'react'
 import { getTrendingMedias,getTopratedMedias,
          getPopularMedias, getKollywoodMovies,
          getBollywoodMovies,getTollywoodMovies,
-         getIndiasTrendingMovies } from '../../index.js'
+         getIndiasTrendingMovies } from '../index.js'
 import { Link } from 'react-router-dom';
-import Card from '../components/CardSlider/Card.jsx'
+import Card from '../CardSlider/Card.jsx'
 
 
 

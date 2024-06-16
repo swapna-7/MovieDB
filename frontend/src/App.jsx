@@ -1,15 +1,16 @@
 import React from 'react';
 import './index.css';
-import  Home   from './pages/Home.jsx';
+import  Home   from './pages/Home/Home.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage.jsx';
-import Header from './components/Header/Header.jsx';
-import MovieDetails from './pages/MovieDetails';
-import SearchResults from './components/Navigation/SearchResults.jsx';
-import Horror from './pages/Horror.jsx'
-import Favorites from './pages/Home/Favorites.jsx';
-import Movies from './pages/Categories/Action.jsx';
+import LoginPage from './pages/Home/LoginPage.jsx';
+import Header from './pages/Home/Header.jsx';
+import MovieDetails from './pages/Home/MovieDetails';
+import SearchResults from './pages/SearchBar/SearchResults.jsx';
+import Favorites from './pages/UsersHandlings/Favorites.jsx';
+import Movies from './pages/Categories/Gener.jsx';
 import Language from './pages/Categories/LanguagePage.jsx';
+import { useParams } from 'react-router-dom';
+
 
 
 
@@ -22,13 +23,7 @@ function App() {
     { id: 878, name: 'Sci-Fi' },
     
   ]
-  const languages = [
-    { id: 'en', name: 'English' },
-    { id: 'hi', name: 'Hindi' },
-    { id: 'ta', name: 'Tamil' },
-    { id: 'te', name: 'Telugu' },
-    { id: 'ml', name: 'Malyalam' },
-  ]
+  const { languageId } = useParams();
 
   
   
@@ -36,26 +31,22 @@ function App() {
   return (
        <>
       <Router>
-      <Header/>
+      <Header />
         <LoginPage/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="movie/:id" element={<h1>Movie detail page</h1>}/>
-          <Route path="movies/:type" element={<h1>Movie list page</h1>}/>
           <Route path="/moviedetails/:id" element={<MovieDetails />} /> // Add a route for MovieDetails
           <Route path="/movies/searchresults/:query" element={<SearchResults />} /> // Add a route for MovieDetails
-          <Route path="/movies/horror" element={<Horror/>}/>
           <Route path="/Favorites" element={<Favorites/>} />
           
           {categories.map((category) => (
           <Route key={category.id} path={`/category/${category.id}`} element={<Movies categoryId={category.id} />} />
-        ))}
+         ))}
 
-        {languages.map((language) => (
-          <Route key={language.id} path={`/category/${language.id}`} element={<Language languageId={language.id} />} />
-        ))}
-                
+             <Route path="/movies/:languageId" element={<Language />} />
+            
         </Routes>
       </Router>
     </>
