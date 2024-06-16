@@ -5,7 +5,11 @@ function Home() {
   
 
   return (
+<<<<<<< HEAD
     <div className='flex flex col flex-wrap'>
+=======
+    <div>
+>>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
     
       <Banner/>
       <Trending/>

@@ -67,7 +67,11 @@ export default function Trending() {
 
   return (
     <div className='text-2xl ml-3'>
+<<<<<<< HEAD
       <h2 className='font-semibold'>Trending</h2>
+=======
+      <h2>Trending</h2>
+>>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
       <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar">
         {trendingData.length > 0? trendingData.map((item, index) => (
           <Link key={index} className="flex flex-col items-center" to={`/moviedetails/${item.id}`}>
@@ -79,7 +83,11 @@ export default function Trending() {
 
       {allData.map((section, index) => (
         <React.Fragment key={index}>
+<<<<<<< HEAD
           <h2 className='font-semibold'>{section.title}</h2>
+=======
+          <h2>{section.title}</h2>
+>>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
           <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar" >
             {section.data.length > 0? section.data.map((item, idx) => (
               <Link key={idx} to={`/moviedetails/${item.id}`} className="flex flex-col items-center">

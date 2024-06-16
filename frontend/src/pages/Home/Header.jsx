@@ -10,9 +10,16 @@ import { SquarePlus } from 'lucide-react';
 function Header() {
   return (
 
+<<<<<<< HEAD
     <div className="bg-black text-white pt-0 mx-2 mb-1 flex flex-row flex-wrap space-between space-x-8">
 
 
+=======
+    <div className="bg-black text-white pt-0 mx-2 mb-1 flex flex-row flex-wrap space-between">
+
+
+      <div className="flex space-x-8 ">
+>>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
         <h1 className='text-xl bg-emerald-400 p-1 m-1 mt-4 rounded-md h-8 font-mono'>MovieDB</h1>
         
         <Link to="/">
@@ -37,6 +44,10 @@ function Header() {
            <LoginPage/>
 
 
+<<<<<<< HEAD
+=======
+      </div>
+>>>>>>> 07b43e808b63698460475bfb3745e5183213c18f
 
     </div>
   )

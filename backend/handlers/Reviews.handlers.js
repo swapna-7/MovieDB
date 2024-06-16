@@ -7,9 +7,9 @@ export const addtoReviews = async(req,res) =>{
 
     console.log("add to review function")
 
-    const {movieId,clerkId,review,createdAt} = await req.body;
+    const {movieId,clerkId,review,createdAt,rating} = await req.body;
 
-    console.log(clerkId,movieId,review,createdAt)
+    console.log(clerkId,movieId,review,createdAt,rating)
 
     const userExists = await User.find({ clerkId: clerkId });
         if (userExists.length == 0)
@@ -20,7 +20,7 @@ export const addtoReviews = async(req,res) =>{
             movieId,
             userId,
             review,
-            createdAt
+            createdAt,rating
         })
         
         console.log("new Review",newReview)
