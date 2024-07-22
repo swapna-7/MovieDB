@@ -1,6 +1,6 @@
 import express from "express";
 
-import { AddMovies,getmovie } from "../handlers/User-Movie.handlers.js";
+import { AddMovies,getmovie } from "../handlers/User-Movies.handlers.js";
 
 const AddMovieRouter = express.Router();
 

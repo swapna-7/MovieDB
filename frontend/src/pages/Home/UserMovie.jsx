@@ -5,6 +5,7 @@ export default function UserMovie() {
 
     const [movies, setMovies] = useState([]);
 
+    
     useEffect(() => {
       axios.get('http://localhost:5000/addmovies')
        .then(response => {
