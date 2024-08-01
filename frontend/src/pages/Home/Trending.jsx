@@ -1,12 +1,15 @@
-import React ,{useState,useEffect}from 'react'
-import { getTrendingMedias,getTopratedMedias,
-         getPopularMedias, getKollywoodMovies,
-         getBollywoodMovies,getTollywoodMovies,
-         getIndiasTrendingMovies } from '../index.js'
-import { Link } from 'react-router-dom';
-import Card from '../CardSlider/Card.jsx'
-
-
+import React, { useState, useEffect } from "react";
+import {
+  getTrendingMedias,
+  getTopratedMedias,
+  getPopularMedias,
+  getKollywoodMovies,
+  getBollywoodMovies,
+  getTollywoodMovies,
+  getIndiasTrendingMovies,
+} from "../index.js";
+import { Link } from "react-router-dom";
+import Card from "../CardSlider/Card.jsx";
 
 export default function Trending() {
   const [trendingData, setTrendingData] = useState([]);
@@ -18,19 +21,17 @@ export default function Trending() {
   const [indiaTrendingData, setIndiaTrendingData] = useState([]);
   const [allData, setAllData] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const trendingResult = await getTrendingMedias('movie') || [];
-        const topRatedResult = await getTopratedMedias('movie') || [];
-        const popularResult = await getPopularMedias('movie') || [];
-        const KollywoodResult = await getKollywoodMovies('movie') || [];
-        const TollywoodResult = await getTollywoodMovies('movie') || [];
-        const BollywoodResult = await getBollywoodMovies('movie') || [];
-        const IndiaTrendingResult = await getIndiasTrendingMovies('movie') || [];
-
-
+        const trendingResult = (await getTrendingMedias("movie")) || [];
+        const topRatedResult = (await getTopratedMedias("movie")) || [];
+        const popularResult = (await getPopularMedias("movie")) || [];
+        const KollywoodResult = (await getKollywoodMovies("movie")) || [];
+        const TollywoodResult = (await getTollywoodMovies("movie")) || [];
+        const BollywoodResult = (await getBollywoodMovies("movie")) || [];
+        const IndiaTrendingResult =
+          (await getIndiasTrendingMovies("movie")) || [];
 
         setTrendingData(trendingResult);
         setTopRatedData(topRatedResult);
@@ -38,58 +39,68 @@ export default function Trending() {
         setKollyWoodData(KollywoodResult);
         setBollyWoodData(BollywoodResult);
         setTollyWoodData(TollywoodResult);
-        setIndiaTrendingData(IndiaTrendingResult)
+        setIndiaTrendingData(IndiaTrendingResult);
 
+        console.log(KollywoodResult);
 
-        console.log(KollywoodResult)
-
-
-        const combinedData = [topRatedResult, popularResult,IndiaTrendingResult, BollywoodResult,TollywoodResult, KollywoodResult];
+        const combinedData = [
+          topRatedResult,
+          popularResult,
+          IndiaTrendingResult,
+          BollywoodResult,
+          TollywoodResult,
+          KollywoodResult,
+        ];
         setAllData([
-          { title: 'Top Rated', data: topRatedResult },
-          { title: 'Get Popular', data: popularResult },
-          { title: 'India Trending', data: IndiaTrendingResult },
-          { title: 'Bollywood', data: BollywoodResult },
-          { title: 'Tollywood', data: TollywoodResult },
-          { title: 'Kollywood', data: KollywoodResult },
+          { title: "Top Rated", data: topRatedResult },
+          { title: "Get Popular", data: popularResult },
+          { title: "India Trending", data: IndiaTrendingResult },
+          { title: "Bollywood", data: BollywoodResult },
+          { title: "Tollywood", data: TollywoodResult },
+          { title: "Kollywood", data: KollywoodResult },
         ]);
-      } 
-      catch (error) {
-        console.error('Fetch Data Error:', error);
+      } catch (error) {
+        console.error("Fetch Data Error:", error);
       }
     };
 
     fetchData();
   }, []);
 
- 
-  
-
   return (
-    <div className='text-2xl ml-3'>
+    <div className="text-2xl w-50">
+      <h2 className="font-semibold">Trending</h2>
 
-      <h2 className='font-semibold'>Trending</h2>
-
-      <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar">
-        {trendingData.length > 0? trendingData.map((item, index) => (
-          <Link key={index} className="flex flex-col items-center" to={`/moviedetails/${item.id}`}>
-            <Card info={item} key={index}/>
-          </Link >
-          
-        )) : null}
+      <div className="flex overflow-x-scroll space-x-4 p-4 no-scrollbar">
+        {trendingData.length > 0
+          ? trendingData.map((item, index) => (
+              <Link
+                key={index}
+                className="flex flex-col items-center"
+                to={`/moviedetails/${item.id}`}
+              >
+                <Card info={item} key={index} />
+              </Link>
+            ))
+          : null}
       </div>
 
       {allData.map((section, index) => (
         <React.Fragment key={index}>
+          <h2 className="font-semibold">{section.title}</h2>
 
-          <h2 className='font-semibold'>{section.title}</h2>
-
-          <div className="flex overflow-x-auto space-x-4 p-4 no-scrollbar" >
-            {section.data.length > 0? section.data.map((item, idx) => (
-              <Link key={idx} to={`/moviedetails/${item.id}`} className="flex flex-col items-center">
-                <Card info={item} key={idx}/>
-              </Link>
-            )) : null}
+          <div className="flex overflow-x-scroll space-x-4 p-4 no-scrollbar">
+            {section.data.length > 0
+              ? section.data.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={`/moviedetails/${item.id}`}
+                    className="flex flex-col items-center"
+                  >
+                    <Card info={item} key={idx} />
+                  </Link>
+                ))
+              : null}
           </div>
         </React.Fragment>
       ))}
